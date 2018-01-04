@@ -1,9 +1,10 @@
 # Secret Santa
 
 ## Spec
-You are managing the Secret Santa for CodeClan this year.  Each person will be responsible for buying one gift for a person at CodeClan, and you must ensure that everyone is both a giver and a recipient: once.
+You are managing the Secret Santa for your online mailing list this year.  Each person will be responsible for buying one gift for a person on the list, and you must ensure that everyone is both a giver and a recipient: once.
 
-Ideally, you will make sure that giving within Cohorts is minimised, to make it less likely that people will guess who the gift is from.
+Ideally, you will make sure that giving within teams is minimised, to make it less likely that people will guess who the gift is from.
+In this case, a team could mean a city, state or country: you decide.
 
 ## MVP
 
@@ -15,9 +16,11 @@ Ideally, you will make sure that giving within Cohorts is minimised, to make it 
 ## Possible Extensions
 
 - Add details to each participant which can also be edited/deleted etc:
-  - their Cohort
+  - their tean
   - any gift preferences they have stated
-- Ensure that there is a minimum of pairing within Cohorts
-- Make it possible for someone to type in their own name and make changes to their preferences if the pairings have not been sent
+  - their address, for the santa to post the gift
+- Ensure that there is a minimum of pairing within teams
+- Make it possible for someone to type in their own name and make changes to their preferences if the pairings have not been set
 - Once the pairings have been set, allow someone to type in their own name and be shown the name and preferences of their recipient (of course they could cheat and find out who their giver was but we'll assume they are playing nice)
+- A way for the organiser to upload a .csv of the participants' details
 - Anything else you think might be fun or useful
