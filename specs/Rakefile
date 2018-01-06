@@ -1,0 +1,10 @@
+# rakefile
+
+task :default => ["run_all_tests"]
+
+desc "Run test suite"
+task :run_all_tests do
+  ruby 'team_spec.rb'
+end
+
+# rakefile

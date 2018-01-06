@@ -13,7 +13,9 @@ class TestTeam < MiniTest::Test
   def test_team_initialize_method_takes_name_id
     team = Team.new({'name' => 'E18'})
     assert_equal('E18', team.name)
+  end
 
+  def test_
   end
 
   # TO DO:
