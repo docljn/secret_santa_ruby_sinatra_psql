@@ -23,10 +23,4 @@ CREATE TABLE pairs(
   recipient_id INT4 REFERENCES participants(id)
 );
 
--- seed data
-
-
-
--- seed data ends
-
 -- santa.sql
