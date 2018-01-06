@@ -1,3 +1,5 @@
+-- santa.sql
+
 DROP TABLE IF EXISTS teams;
 DROP TABLE IF EXISTS participants;
 DROP TABLE IF EXISTS pairs;
@@ -22,3 +24,9 @@ CREATE TABLE pairs(
 );
 
 -- seed data
+
+
+
+-- seed data ends
+
+-- santa.sql

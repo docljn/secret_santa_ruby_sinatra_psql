@@ -6,7 +6,7 @@ Database name: santa (createdb santa)
 ### Participants
 field         | data type
 -----         |----------
-id            | SERIAL4 NOT NULL
+id            |SERIAL4 PRIMARY KEY
 name          | VARCHAR(256)
 email         | VARCHAR(256)
 preferences   | VARCHAR(256)
@@ -16,13 +16,13 @@ team_id       | INT4 REFERENCES teams(id)
 ### Teams
 field         | data type
 ----------    | ------------
-id            | SERIAL4 NOT NULL
+id            | SERIAL4 PRIMARY KEY
 name          | VARCHAR(256)
 
 ### Pairs
 field         | data type
 -------       | ------
-id            | SERIAL4 NOT NULL
+id            | SERIAL4 PRIMARY KEY
 santa_id      | INT4 REFERENCES participants(id)
 recipient_id  | INT4 REFERENCES participants(id)
 
@@ -43,7 +43,7 @@ Additional methods:
 ### Addresses
 field           | data type
 ----            | ----
-id              | SERIAL 4 NOT NULL
+id              | SERIAL 4 PRIMARY KEY
 participant_id  | INT4 REFERENCES participants(id)
 line1           | VARCHAR(256)
 line2           | VARCHAR(256)
