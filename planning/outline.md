@@ -1,6 +1,7 @@
 # Planning
 
-## Database Tables
+## Database  & Tables
+Database name: santa (createdb santa)
 
 ### Participants
 field         | data type
