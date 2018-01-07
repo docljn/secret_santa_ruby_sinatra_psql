@@ -19,9 +19,11 @@ class Team
   end
 
   def self.select_one(id)
+    sql = 'SELECT * FROM teams WHERE id = $1;'
+    values = [id]
+    sql_result = SqlRunner.run(sql, values)
+    object = Team.new(sql_result[0])
   end
-
-
 
 
   def insert()
@@ -32,6 +34,9 @@ class Team
   end
 
   def update()
+    sql = 'UPDATE teams SET name = $1 WHERE id = $2;'
+    values = [@name, @id]
+    sql_result = SqlRunner.run(sql, values)
   end
 
 

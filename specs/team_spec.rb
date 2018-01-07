@@ -1,6 +1,7 @@
 # team_spec.rb
 require("minitest/autorun")
 require ("minitest/reporters")
+require ("pry-byebug")
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative("../models/team.rb")
@@ -14,6 +15,7 @@ class TestTeam < MiniTest::Test
   def setup
     %x`psql -d santa_test -f ../db/santa_test.sql`
     @team = Team.new({'name' => 'E18'})
+    @team.insert
   end
 
 
@@ -22,9 +24,23 @@ class TestTeam < MiniTest::Test
   end
 
   def test_insert_saves_to_database_creating_id
-    @team.insert
     assert_equal('1', @team.id)
   end
+
+  def test_select_one_returns_name_id
+    selected = Team.select_one(1)
+    assert_equal('E18', selected.name)
+  end
+
+  def test_update_saves_to_database_retaining_id
+    selected = Team.select_one(1)
+    selected.name = 'E19'
+    selected.update
+    read = Team.select_one(1)
+    assert_equal(1, read.id)
+    assert_equal('E19', read.name)
+  end
+
 
 
 
