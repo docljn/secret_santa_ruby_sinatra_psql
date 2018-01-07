@@ -5,7 +5,6 @@ task :default => ["run_all_tests"]
 desc "Run test suite"
 task :run_all_tests do
   # reset test database
-  sh('psql -d santa_test -f ../db/santa_test.sql')
 
   # repopulate test database if needed
   # ruby '../db/santa_test_seeds.rb'
