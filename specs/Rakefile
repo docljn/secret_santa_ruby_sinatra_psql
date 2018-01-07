@@ -4,14 +4,8 @@ task :default => ["run_all_tests"]
 
 desc "Run test suite"
 task :run_all_tests do
-  # reset test database
-
-  # repopulate test database if needed
-  # ruby '../db/santa_test_seeds.rb'
   # run test files
-
-  ruby 'team_spec.rb'
-  # add other test file names here
+  ruby '*.rb'
 end
 
 # Rakefile
