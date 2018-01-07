@@ -4,13 +4,12 @@ task :default => ["run_all_tests"]
 
 desc "Run test suite"
 task :run_all_tests do
-  # think about how to set up a testing environment here?
-  # set environment to 'test' before requiring sinatra gem
-  # ENV['RACK_ENV'] = 'test'
-  # require ('sinatra')
   # reset test database
+  sh('psql -d santa_test -f ../db/santa_test.sql')
+
+  # repopulate test database if needed
+  # ruby '../db/santa_test_seeds.rb'
   # run test files
-  ruby '../db/santa_test_seeds.rb'
 
   ruby 'team_spec.rb'
   # add other test file names here
