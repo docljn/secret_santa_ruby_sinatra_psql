@@ -1,25 +1,20 @@
 # sql_runner.rb
 
-require 'PG'
+require 'pg'
 
 class SqlRunner
 
-  self.run = self.run_development if development?
-
-  def self.run(sql, values=[])
+  def self.run(sql, values=[], environment = 'test')
     begin
-      db = PG.connect({dbname: 'santa', host: 'localhost'})
-      db.prepare('query', sql)
-      result = db.exec_prepared('query', values)
-    ensure
-      db.close() if db != nil
-    end
-    return result
-  end
+      if environment == 'development'
+        database = 'santa'
+        host_server = 'localhost'
+      else environment == 'test'
+        database = 'santa_test'
+        host_server = 'localhost'
+      end
 
-  def self.run_development(sql, values=[])
-    begin
-      db = PG.connect(dbname: 'santa_test', host: 'localhost')
+      db = PG.connect({dbname: database, host: host_server})
       db.prepare('query', sql)
       result = db.exec_prepared('query', values)
     ensure

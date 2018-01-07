@@ -1,4 +1,4 @@
-# seed_data.rb
+# santa_seeds.rb
 
 # teams
 
@@ -6,4 +6,4 @@
 
 # pairs
 
-# seed_data.rb
+# santa_seeds.rb
