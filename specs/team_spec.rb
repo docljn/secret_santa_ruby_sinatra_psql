@@ -13,6 +13,7 @@ class TestTeam < MiniTest::Test
   # must start with "test_"
 
   def setup
+    # run before each test
     %x`psql -d santa_test -f ../db/santa_test.sql`
     @team = Team.new({'name' => 'E18'})
     @team.insert
@@ -21,6 +22,10 @@ class TestTeam < MiniTest::Test
     @team3 = Team.new({'name' => 'Team3'})
     @team3.insert
     # consider moving this to a seed data file?
+  end
+
+  def teardown
+    # run after each test
   end
 
 
